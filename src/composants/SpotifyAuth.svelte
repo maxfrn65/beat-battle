@@ -1,5 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
+    import { goto } from '$app/navigation';
+    
     const dispatch = createEventDispatcher();
 
     // Remplacez par votre Client ID
@@ -38,6 +40,7 @@
                 dispatch('token', token);
                 window.location.hash = '';
                 localStorage.removeItem('spotify_auth_state');
+                goto('/musique');
             }
         }
     }

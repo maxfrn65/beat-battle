@@ -67,6 +67,7 @@
             }
             
             playlistInfo = await response.json();
+            //Randomize the playlist
             console.log('Informations de la playlist:', playlistInfo);
             console.log('Nombre de titres:', playlistInfo.tracks.total);
             console.log('Titres:', playlistInfo.tracks.items.map((item: any) => item.track.name));
