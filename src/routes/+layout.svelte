@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+    let {children} = $props();
 
 	let isOpen = false;
 	let darkMode = false;
@@ -55,8 +56,12 @@
 	</div>
 </nav>
 
+{@render children()}
+
 <style>
-    /* ======= NAVBAR ======= */
+    @import "../app.css";
+    /* ======= NAVBAR ======*/
+
     .navbar {
         background: white;
         color: black;
@@ -66,7 +71,6 @@
         top: 0;
         z-index: 1000;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-				font-family: 'Poppins', sans-serif;
     }
 
     .container {
@@ -107,22 +111,6 @@
     .nav-buttons {
         display: flex;
         gap: 10px;
-    }
-
-    .btn {
-        background: #ff4d6d;
-        color: white;
-        padding: 10px 15px;
-        border-radius: 20px;
-        font-weight: bold;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-        transition: background 0.3s ease-in-out;
-    }
-
-    .btn:hover {
-        background: #ff2744;
     }
 
     .toggle-darkmode {
